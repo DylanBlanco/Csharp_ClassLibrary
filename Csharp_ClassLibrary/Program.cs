@@ -1,5 +1,9 @@
 ﻿
 
+using System;
+using System.Linq;
+using System.Security.Cryptography;
+
 namespace Csharp_ClassLibrary
 {
     public class Program
@@ -22,8 +26,13 @@ namespace Csharp_ClassLibrary
 
                 Console.WriteLine("Numeri generati: " + string.Join(", ", numeriCasuali));
 
+                int numTentativi = 0;
+
                 while (true)
                 {
+                    //Incremento del numTentativi a ogni ciclo
+                    numTentativi++;
+
                     // chiedi i due numeri all'utente
                     Console.Write("Indovina il primo numero (1-10): ");
                     int num1 = int.Parse(Console.ReadLine());
@@ -39,6 +48,7 @@ namespace Csharp_ClassLibrary
                     if (trovato1 && trovato2)
                     {
                         Console.WriteLine("Hai indovinato entrambi i numeri!");
+                        Console.WriteLine("Numero di tentativi fatti: " + numTentativi);
                         break;
                     }
                     else if (trovato1 || trovato2)
