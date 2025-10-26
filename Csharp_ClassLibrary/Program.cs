@@ -1,6 +1,4 @@
-﻿
-
-using System;
+﻿using System;
 using System.Linq;
 using System.Security.Cryptography;
 
@@ -21,7 +19,6 @@ namespace Csharp_ClassLibrary
                 // genera i numeri casuali
                 var numGen = new ClassLibrary_gioco.Class_Gioco();
                 int[] arrNumRan = numGen.GenRandomNum();
-
                 Console.WriteLine("Numeri generati: " + string.Join(", ", arrNumRan));
 
                 int numTentativi = 0;
@@ -35,10 +32,8 @@ namespace Csharp_ClassLibrary
                     // chiedi i due numeri all'utente
                     Console.Write("Indovina il primo numero (1-10): ");
                     int num1 = int.Parse(Console.ReadLine());
-
                     Console.Write("Indovina il secondo numero (1-10): ");
                     int num2 = int.Parse(Console.ReadLine());
-
 
                     // CLASSE CONTROLLA SE I NUMERI SONO PRESENTI
                     var checkNum = new ClassLibrary_gioco.Class_Gioco();
@@ -59,10 +54,9 @@ namespace Csharp_ClassLibrary
                         Console.WriteLine("Non hai indovinato nessuno dei numeri!");
                 }
 
-                // 🔹 Dopo la vittoria, chiedi se vuole giocare di nuovo
+                // Dopo la vittoria, chiedi se vuole giocare di nuovo
                 Console.Write("\nVuoi giocare di nuovo? (s/n): ");
                 string risposta = Console.ReadLine().ToLower();
-
                 if (risposta != "s" && risposta != "si")
                 {
                     continuaGioco = false;
