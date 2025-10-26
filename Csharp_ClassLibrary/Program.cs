@@ -11,20 +11,18 @@ namespace Csharp_ClassLibrary
         // CREA ARRAY DI 10 NUM GENERATI CASUALMENTE E CHIEDI ALL'UTENTE DI INDOVINARE DUE NUMERI
         public static void Main(string[] args)
         {
+            var stratGame = new ClassLibrary_gioco.Class_Gioco();
+            Console.WriteLine(stratGame.IniziaGioco());
+
             bool continuaGioco = true;
 
             while (continuaGioco)
             {
-                Random rnd = new Random();
-                int[] numeriCasuali = new int[10];
-
                 // genera i numeri casuali
-                for (int i = 0; i < numeriCasuali.Length; i++)
-                {
-                    numeriCasuali[i] = rnd.Next(1, 11);
-                }
+                var numGen = new ClassLibrary_gioco.Class_Gioco();
+                int[] arrNumRan = numGen.GenRandomNum();
 
-                Console.WriteLine("Numeri generati: " + string.Join(", ", numeriCasuali));
+                Console.WriteLine("Numeri generati: " + string.Join(", ", arrNumRan));
 
                 int numTentativi = 0;
 
@@ -41,8 +39,8 @@ namespace Csharp_ClassLibrary
                     int num2 = int.Parse(Console.ReadLine());
 
                     // controlla se sono presenti
-                    bool trovato1 = numeriCasuali.Contains(num1);
-                    bool trovato2 = numeriCasuali.Contains(num2);
+                    bool trovato1 = arrNumRan.Contains(num1);
+                    bool trovato2 = arrNumRan.Contains(num2);
 
                     // mostra il risultato
                     if (trovato1 && trovato2)
