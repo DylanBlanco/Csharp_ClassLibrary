@@ -38,5 +38,12 @@
             }
             return false;
         }
+
+
+        // CLASSE CHE CONTA I TENTATIVI
+        public int ContaTentativi(int tentativi)
+        {
+            return tentativi + 1;
+        }
     }
 }

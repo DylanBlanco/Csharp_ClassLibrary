@@ -28,8 +28,9 @@ namespace Csharp_ClassLibrary
 
                 while (true)
                 {
-                    //Incremento del numTentativi a ogni ciclo
-                    numTentativi++;
+                    // CLASSE CHE CONTA I TENTATIVI
+                    var countTent = new ClassLibrary_gioco.Class_Gioco();
+                    numTentativi = countTent.ContaTentativi(numTentativi);
 
                     // chiedi i due numeri all'utente
                     Console.Write("Indovina il primo numero (1-10): ");
