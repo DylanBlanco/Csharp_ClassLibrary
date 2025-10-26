@@ -38,10 +38,13 @@ namespace Csharp_ClassLibrary
                     Console.Write("Indovina il secondo numero (1-10): ");
                     int num2 = int.Parse(Console.ReadLine());
 
-                    // controlla se sono presenti
-                    bool trovato1 = arrNumRan.Contains(num1);
-                    bool trovato2 = arrNumRan.Contains(num2);
 
+                    // CLASSE CONTROLLA SE I NUMERI SONO PRESENTI
+                    var checkNum = new ClassLibrary_gioco.Class_Gioco();
+
+                    // controlla se sono presenti
+                    bool trovato1 = checkNum.ControllaNum(arrNumRan, num1);
+                    bool trovato2 = checkNum.ControllaNum(arrNumRan, num2);
                     // mostra il risultato
                     if (trovato1 && trovato2)
                     {

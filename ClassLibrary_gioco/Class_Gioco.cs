@@ -23,5 +23,20 @@
 
             return arrNumRan;
         }
+
+
+        // CLASSE CONTROLLA SE I NUMERI SONO PRESENTI
+        public bool ControllaNum(int[] arrNumRan, int num)
+        {
+            // controlla se è presente
+            foreach (int n in arrNumRan)
+            {
+                if (n == num)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
